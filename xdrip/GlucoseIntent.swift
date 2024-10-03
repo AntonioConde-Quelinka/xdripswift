@@ -20,7 +20,7 @@ struct GlucoseIntent: AppIntent {
     }
 
     static var description: IntentDescription? {
-        IntentDescription("Have Siri say your blood glucose level.", categoryName: "Information")
+        IntentDescription("Have system say your blood glucose level.", categoryName: "Information")
     }
 
     @MainActor
