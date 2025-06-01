@@ -151,7 +151,15 @@ jobs:
         echo "Synchronizing your fork of <code>xdripswift</code> with the upstream repository <code>JohanDegraeve/xdripswift</code> will be skipped." >> $GITHUB_STEP_SUMMARY
         echo "If you want to enable automatic builds and updates for your xDrip4iOS, please follow the instructions \
               under the following path <code>xdripswift/fastlane/testflight.md</code>." >> $GITHUB_STEP_SUMMARY
-  
+  keep_alive:
+    name: Keepalive Workflow
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gautamkrishnar/keepalive-workflow@v2
+      
   # Builds xDrip4iOS
   build:
     name: Build
